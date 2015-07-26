@@ -76,6 +76,8 @@ case class Reg(choices: List[Everything]) extends Everything {
 
 class JsonSchemaRegexParser extends RegexParsers {
 
+  override val skipWhitespace = false
+
   def startline: Parser[Everything] = "^" ^^ {x => Startline}
   def endline: Parser[Everything] = "$" ^^ {x => Endline}
 
